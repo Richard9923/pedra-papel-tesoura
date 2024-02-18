@@ -15,17 +15,17 @@ function game(player, computer) {
       `Empate. Escolha do jogador: ${player}. Escolha do computador: ${computer}.`
     );
     return "empate";
-  } else if (player == "pedra" || computer == "tesoura") {
+  } else if (player == "pedra" && computer == "tesoura") {
     console.log(
       `Jogador venceu! Escolha do jogador: ${player}. Escolha do computador: ${computer}.`
     );
     return "vitoria";
-  } else if (player == "papel" || computer == "pedra") {
+  } else if (player == "papel" && computer == "pedra") {
     console.log(
       `Jogador venceu! Escolha do jogador: ${player}. Escolha do computador: ${computer}.`
     );
     return "vitoria";
-  } else if (player == "tesoura" || computer == "papel") {
+  } else if (player == "tesoura" && computer == "papel") {
     console.log(
       `Jogador venceu! Escolha do jogador: ${player}. Escolha do computador: ${computer}.`
     );
@@ -43,7 +43,7 @@ function pontuacaoJogador() {
 }
 
 function pontuacaoComputador() {
-  console.log(`Pontuação do computador: ${computer}.`);
+  console.log(`Pontuação do computador: ${computadorPoints}.`);
 }
 
 function vitoriaPlayer() {
