@@ -38,10 +38,51 @@ function game(player, computer) {
   }
 }
 
+function pontuacaoJogador() {
+  console.log(`Pontuação do jogador: ${playerPoints}`);
+}
+
+function pontuacaoComputador() {
+  console.log(`Pontuação do computador: ${computer}.`);
+}
+
+function vitoriaPlayer() {
+  console.log(`O jogador venceu a partida com 3 pontos. Parabéns!!!`);
+}
+
+function vitoriaComputador() {
+  console.log(`O computador venceu a partida com 3 pontos.`);
+}
+
 let playerPoints = 0;
 let computadorPoints = 0;
 let gameOn = true;
-console.log(`Pontuação do jogador: ${playerPoints}`);
-console.log(`Pontuação do computador: ${computer}.`);
 
-while (gameOn == true) {}
+pontuacaoJogador();
+pontuacaoComputador();
+while (gameOn == true) {
+  let gameResult = game(playerChoice(), computerChoice());
+
+  if (gameResult == "empate") {
+    playerPoints += 0;
+    computadorPoints += 0;
+    pontuacaoJogador();
+    pontuacaoComputador();
+  } else if (gameResult == "vitoria") {
+    playerPoints += 1;
+    pontuacaoJogador();
+    pontuacaoComputador();
+    if (playerPoints == 3) {
+      vitoriaPlayer();
+      gameOn = false;
+    }
+  } else if (gameResult == "derrota") {
+    computadorPoints += 1;
+    pontuacaoJogador();
+    pontuacaoComputador();
+    if (computadorPoints == 3) {
+      vitoriaComputador();
+      gameOn = false;
+    }
+  }
+}
